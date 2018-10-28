@@ -60,21 +60,46 @@ public class EtchASketch {
              userInput = input.nextLine().toUpperCase();
            }
 
-    if (userInput.equals("A")) {
-      return(1);  //Left
-    } else if (userInput.equals("D")) {
-      return(2);  //Right
-    } else if (userInput.equals("W")) {
-      return(3);  //Up
-    } else if (userInput.equals("S")) {
-      return(4);  //Down
-    } else if (userInput.equals("RESET")) {
-      return(0);  //RESET
-    } else if (userInput.equals("QUIT")) {      //QUIT
-      System.exit(0);
-      return(-1);
-    } else {
-      return(100);
+    // if (userInput.equals("A")) {
+    //   return(1);  //Left
+    // } else if (userInput.equals("D")) {
+    //   return(2);  //Right
+    // } else if (userInput.equals("W")) {
+    //   return(3);  //Up
+    // } else if (userInput.equals("S")) {
+    //   return(4);  //Down
+    // } else if (userInput.equals("RESET")) {
+    //   return(0);  //RESET
+    // } else if (userInput.equals("QUIT")) {      //QUIT
+    //   System.exit(0);
+    //   return(-1);
+    // } else {
+    //   return(100);
+    // }
+
+
+    switch (userInput) {
+      case "A":
+        return 1;
+
+      case "D":
+        return 2;
+
+      case "W":
+        return 3;
+
+      case "S":
+        return 4;
+    
+      case "RESET":
+        return 0;
+
+      case "QUIT":
+        System.exit(0);
+        return(-1);
+
+      default:
+        return(100);
     }
   }
 
@@ -132,7 +157,7 @@ public class EtchASketch {
     currX = currXY / 100;
     currY = currXY % 100;
     System.out.println("\n"//\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n
-                      + "(DEBUG) CurrX: " + currX + " CurrY: " + currY);           //TODO: REMOVE
+                      + "(DEBUG) CurrX: " + currX + " CurrY: " + currY);           
 
     board[currY][currX] = 1;    //board[rows][columns]
                                 //rows are Y and columns are X
